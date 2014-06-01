@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+	<div data-role="page" id="page1" data-theme="a">
+
+		<div data-role="header">
+			<h1>Exemplo JQM</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true"> 
+			 <li data-role="list-divider">MENU</li> 
+			 <li><a href="#page2" data-transition="pop">POP</a></li> 
+			 <li><a href="#page2" data-transition="slide">SLIDE</a></li> 
+			 <li><a href="#page2" data-transition="slideup">SLIDE UP</a></li> 
+			 <li><a href="#page2" data-transition="fade">FADE</a></li> 
+			 <li><a href="#page2" data-transition="flow">FLOW</a></li> 
+			 <li><a href="#page2" data-transition="none">NONE</a></li> 
+			</ul> 
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div><!-- /footer -->
+	    
+	</div><!-- /page -->
+
+
+	<div data-role="page" id="page2" data-theme="b">
+
+		<div data-role="header">
+			<h1>Exemplo JQM</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<ul data-role="listview" data-inset="true"> 
+			 <li><a href="#page1" data-transition="pop">POP</a></li> 
+			 <li><a href="#page1" data-transition="slide">SLIDE</a></li> 
+			 <li><a href="#page1" data-transition="slideup">SLIDE UP</a></li> 
+			 <li><a href="#page1" data-transition="fade">FADE</a></li> 
+			 <li><a href="#page1" data-transition="flow">FLOW</a></li> 
+			 <li><a href="#page1" data-transition="none">NONE</a></li> 
+			</ul> 
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div><!-- /footer -->
+	    
+	</div><!-- /page -->	
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+	<script>
+		$(document).on("pageshow","#page2",function(){
+		  alert("pageshow na #page2");
+		});
+
+		$(document).on("pagebeforeshow","#page2",function(){
+		  alert("pagebeforeshow na #page2");
+		});
+
+		$(document).on("pagecreate","#page2",function(){
+		  alert("pagecreate na #page2");
+		});
+
+		$(document).on("pagebeforecreate","#page2",function(){
+		  alert("pagebeforecreate na #page2");
+		});
+
+
+		$(document).on("pagechange","#page2",function(){
+		  alert("pagechange na #page2");
+		});
+
+		$(document).on("pagebeforechange","#page2",function(){
+		  alert("pagebeforechange na #page2");
+		});
+
+	</script>
+
+
+</head>
+<body>
+
+	<div data-role="page" id="page1">
+
+		<div data-role="header">
+			<h1>Exemplo JQM</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<p><a href="#page2">Ir para pag 2</a></p>
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div><!-- /footer -->
+	    
+	</div><!-- /page -->
+
+
+	<div data-role="page" id="page2">
+
+		<div data-role="header">
+			<h1>Exemplo JQM</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<p><a href="#page1">Ir para page 1</a></p>
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div><!-- /footer -->
+	    
+	</div><!-- /page -->	
+
+</body>
+</html>

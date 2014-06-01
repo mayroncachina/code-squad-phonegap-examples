@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $.post( "file.json", function( data ) {
+              $( ".result" ).html( data );
+            });
+
+            $.get( "file.json", function( data ) {
+              $( ".result" ).html( data );
+            });
+
+            $.get( "test.cgi", { name: "John", time: "2pm" } )
+            .done(function( data ) {
+                alert( "Data Loaded: " + data );
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

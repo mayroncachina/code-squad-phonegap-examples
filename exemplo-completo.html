@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#botao").click(function(){
+                $("div[name='laranja']").attr('style','background-color: orange;');
+
+                $("#laranja" ).dblclick(function() {
+                  alert( "2 Clicks na div #laranja" );
+                });
+
+                $(".laranja").html('EXEMPLO JQuery');
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div name="laranja" id="laranja">
+        <p class="laranja">EXEMPLO</p>
+    </div>
+    <button id="botao">CLICK</button>
+
+</body>
+</html>
