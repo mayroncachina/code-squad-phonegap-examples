@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Device Properties Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" charset="utf-8">
+      var map;
+
+
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+
+      function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      }
+
+      function onSuccess(position) {
+        
+        var element = document.getElementById('geolocation');
+        
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';
+
+        var mapOptions = {
+          zoom: 7ß,
+          center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+        };
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      }
+
+      function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+      }
+
+    </script>
+     <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+  </head>
+  <body>
+    <p id="geolocation">Finding geolocation...</p>
+    <div id="map-canvas"></div>
+  </body>
+</html>

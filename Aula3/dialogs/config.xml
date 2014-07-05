@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.cachina.app.dialogs" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Dialogs</name>
+    <description>
+        Exemplo Dialogs
+    </description>
+    <author email="mayroncachina@gmail.com" href="http://cachina.com.br">
+        Mayron Cachina
+    </author>
+    <access origin="*"/>
+
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    
+    <!--Notification-->
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+
+</widget>

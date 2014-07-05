@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back Button Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("PRESSIONOU O BOTAO VOLTAR")
+    }
+
+    </script>
+  </head>
+  <body onload="onLoad()">
+          <h1>Exemplos de Eventos</h1>
+        <p><a href="deviceready.html">DeviceReady</a></p>
+        <p><a href="backbutton.html">Back Button</a></p>
+        <p><a href="pause.html">Pause</a></p>
+        <p><a href="volumedownbutton.html">Volume Button</a></p>
+        <p><a href="menubutton.html">Menu Button</a></p>
+        <p><a href="searchbutton.html">Search Button</a></p>
+  </body>
+</html>

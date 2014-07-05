@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery-1.11.1.min.js"></script>
+
+	<script type="text/javascript">
+
+	   $(function() {
+
+			$("#lista").keypress(function() {
+			    localStorage.setItem('dado', $("#lista").html());
+			 });
+
+			if (localStorage.getItem('dado')) {
+			    $("#lista").html(localStorage.getItem('dado'));
+			}
+
+		    $("#limpar").click(function() {
+			    localStorage.clear();
+			    window.location = window.location;
+			});	
+	    });
+
+  </script>
+  </head>
+  <body>
+
+    <h1>TODO LIST</h1>
+
+   <ul id="lista" contenteditable="true">        
+	     <li>&nbsp;</li>
+	</ul>
+
+	<button id="limpar">Limpar</button>
+    <p><a href="index.html">Exemplo 1</a></p>
+  </body>
+</html>
