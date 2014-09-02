@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Social Picture</title>
+		
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+	    <script src="js/jquery-1.11.1.min.js"></script>
+	    <script src="js/jquery.mobile-1.4.3.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body>
+
+		<div data-role="page" id="index">
+
+			<div data-role="header" data-position="fixed">
+				<h1>SocialPicture</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">	
+
+
+				<div class="ui-grid-b">
+
+				    <a href="#">
+				    	<img src="http://sandbox.cachina.com.br/upload/5MPxAq" />
+				    </a>
+
+				</div>
+
+			</div><!-- /content -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#">Lista</a></li>
+						<li><a href="#" onclick="getImage()">Foto</a></li>
+						<li><a href="#sobre">Sobre</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<div data-role="page" id="sobre">
+
+			<div data-role="header" data-position="fixed">
+				<h1>SocialPicture</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">	
+
+
+				<div class="ui-grid-b">
+
+				    <a href="#">
+				    	<img src="http://sandbox.cachina.com.br/upload/5MPxAq" />
+				    </a>
+
+				</div>
+
+			</div><!-- /content -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#index">Lista</a></li>
+						<li><a href="#">Foto</a></li>
+						<li><a href="#">Sobre</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+
+
+        <script type="text/javascript">
+
+	        document.addEventListener("deviceready", onDeviceReady, false);
+	 
+	        function onDeviceReady() {}
+	 
+	        function getImage() {
+
+	            navigator.camera.getPicture(uploadPhoto, 
+	            	function(message) {
+						alert('get picture failed');
+					},{
+						quality: 50, 
+						destinationType: navigator.camera.DestinationType.FILE_URI,
+						sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+					}
+		        );
+		 
+	        }
+	 
+	        function uploadPhoto(imageURI) {
+	            var options = new FileUploadOptions();
+	            options.fileKey="file";
+	            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+	            options.mimeType="image/jpeg";
+	 
+	            var params = new Object();
+	            params.value1 = "test";
+	            params.value2 = "param";
+	 
+	            options.params = params;
+	            options.chunkedMode = false;
+	 
+	            var ft = new FileTransfer();
+	            ft.upload(imageURI, "http://sandbox.cachina.com.br/upload.php", win, fail, options);
+	        }
+	 
+	        function win(r) {
+	            console.log("Code = " + r.responseCode);
+	            console.log("Response = " + r.response);
+	            console.log("Sent = " + r.bytesSent);
+	            alert(r.response);
+	        }
+	 
+	        function fail(error) {
+	            alert("An error has occurred: Code = " = error.code);
+	        }
+ 
+
+
+
+        </script>
+    </body>
+</html>
