@@ -21,24 +21,19 @@
     }
 
     function onPhotoDataSuccess(imageData) {
-      var smallImage = document.getElementById('smallImage');
-      smallImage.style.display = 'block';
-      smallImage.src = "data:image/jpeg;base64," + imageData;
+      var image = document.getElementById('smallImage');
+      image.style.display = 'block';
+      image.src = "data:image/jpeg;base64," + imageData;
     }
 
     function onPhotoURISuccess(imageURI) {
-      var largeImage = document.getElementById('largeImage');
-      largeImage.style.display = 'block';
-      largeImage.src = imageURI;
+      var image = document.getElementById('smallImage');
+      image.style.display = 'block';
+      image.src = imageURI;
     }
 
     function capturePhoto() {
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
-    }
-
-    function capturePhotoEdit() {
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
     }
 
@@ -61,12 +56,9 @@
   <body>
 
     <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
     <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
     <div style="text-align:center">
 	    <img style="display:none;width:240px;height:240px;" id="smallImage" src="" />
-	    <img style="display:none;" id="largeImage" src="" />
     </div>
 
 

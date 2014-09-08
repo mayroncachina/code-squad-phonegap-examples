@@ -1,39 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="br.com.cachina.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Accel</name>
+    <name>Accelerometer</name>
     <description>
         Exemplo Accelerometro
     </description>
     <author email="mayroncachina@gmail.com" href="http://cachina.com.br">
         Mayron Cachina
     </author>
+
     <access origin="*"/>
 
-    <feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
-
-    <preference name="permissions" value="INTERNET" />
-    <access uri="http://sh1t.hol.es" subdomains="true" />
-    <access uri="http://google.com" subdomains="true" />
-    <access uri="http://googleapis.com" subdomains="true" />
-    <access uri="http://gstatic.com" subdomains="true" />
-    <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
-    <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="false" />
-    <preference name="auto-hide-splash-screen" value="false" />
-    <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    
 
     <gap:plugin name="org.apache.cordova.device-motion" version="0.2.6" />
 
